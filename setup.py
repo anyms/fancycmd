@@ -39,7 +39,8 @@ class UploadToPypi(install):
 
     def run(self):
         os.system("python setup.py bdist_wheel sdist")
-        os.system("python setup.py sdist --format=bztar,zip upload")
+        os.system("pip3 install twine")
+        os.system("twine upload dist/*")
 
 
 class Install(install):
