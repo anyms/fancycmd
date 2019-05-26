@@ -38,7 +38,7 @@ class UploadToPypi(install):
     """Upload the package to pypi. -- only for Maintainers."""
 
     def run(self):
-        os.system("python setup.py sdist")
+        os.system("python setup.py bdist_wheel sdist")
         os.system("python setup.py sdist --format=bztar,zip upload")
 
 
